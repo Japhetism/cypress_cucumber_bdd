@@ -1,8 +1,7 @@
 import { 
   Given, When, Then 
 } from "cypress-cucumber-preprocessor/steps";
-import LoginPage from "../pageObjects/pages/login_page";
-import ProfilePage from "../pageObjects/pages/profile_page";
+import { LoginPage, ProfilePage } from "../pageObjects/pages";
 
 Given(/^the user is on the login page$/, () => {
   LoginPage.visitLoginPage();
