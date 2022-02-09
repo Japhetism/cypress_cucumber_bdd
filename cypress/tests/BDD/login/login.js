@@ -1,18 +1,21 @@
 import { 
   Given, When, Then 
 } from "cypress-cucumber-preprocessor/steps";
+import LoginPage from "../pageObjects/pages/login_page";
+import ProfilePage from "../pageObjects/pages/profile_page";
 
 Given(/^the user is on the login page$/, () => {
-  cy.visit("/login");
-  cy.url().should("include", "/login");
+  LoginPage.visitLoginPage();
 });
 
 When(/^the user tries to login with correct credentials$/, () => {
-  cy.get("input#username[name=username]").type("");
-  cy.get("input#password[name=password").type("");
-  cy.get("button#kt_login_signin_submit").click();
+  const username = "";
+  const password = "";
+  LoginPage.fillUsername(username);
+  LoginPage.fillPassword(password);
+  LoginPage.submitLoginDetails();
 });
 
 Then(/^he should be redirected to the select profile page/, () => {
-  cy.get("div.kt-login__title h3").should("have.text", "Profile");
+  ProfilePage.verifyIsOnProfilePage();
 });
