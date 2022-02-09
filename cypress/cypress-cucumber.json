@@ -1,0 +1,5 @@
+{
+  "baseUrl": "",
+  "integrationFolder": "cypress/test/BDD",
+  "pluginsFile": "cypress/plugins/cucumber-plugins.js"
+}
